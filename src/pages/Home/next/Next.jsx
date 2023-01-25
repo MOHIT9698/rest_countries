@@ -7,11 +7,11 @@ import "./Next.css";
 const Next = ({mode , setMode} ) => {
 
     const [single,setSingle]=useState([]);
-    const{area}=useParams();
+    const{name}=useParams();
 
     useEffect(()=>{
         async function fetchSingle(){
-            let {data}=await axios(`https://restcountries.com/v2/area/${area}`);
+            let {data}=await axios(`https://restcountries.com/v2/name/${name}`);
             setSingle(data);
         }
         fetchSingle();
